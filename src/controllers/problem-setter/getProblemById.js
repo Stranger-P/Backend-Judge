@@ -8,7 +8,6 @@ const getProblemById = async (req, res) => {
     if (!problem) return res.status(404).json({ message: 'Not found' });
     res.json(problem);
   } catch (err) {
-    console.error(err);
     res.status(500).json({ message: 'Server error' });
   }
 };

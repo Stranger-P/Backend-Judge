@@ -76,7 +76,6 @@ router.get('/stats', authMiddleware, async (req, res) => {
       maxStreak = Math.max(maxStreak, tempStreak);
       lastDate = date;
     }
-    console.log("every thing working fine");
     res.json({
       problemsSolved: solvedProblems.length,
       difficultyBreakdown,

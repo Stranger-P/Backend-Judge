@@ -2,7 +2,7 @@ const Submission = require('../../models/Submission');
 
 const getSubmissionHistory = async (req, res) => {
   const { problemId } = req.params;
-
+  
   try {
     const submissions = await Submission.find({ 
       userId: req.user.id,

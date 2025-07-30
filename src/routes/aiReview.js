@@ -20,7 +20,6 @@ router.post("/ai-review", authMiddleware, async (req, res) => {
       review: aiResponse
     });
   } catch (error) {
-    console.error("Error generating AI review:", error);
     res.status(500).json({
       success: false,
       error: "Failed to generate AI review"

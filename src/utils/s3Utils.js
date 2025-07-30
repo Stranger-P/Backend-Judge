@@ -28,7 +28,6 @@ const uploadToS3 = async (file, problemId) => {
 
     return `https://${process.env.AWS_S3_BUCKET_NAME}.s3.${process.env.AWS_S3_REGION}.amazonaws.com/${key}`;
   } catch (error) {
-    console.error('Error uploading to S3:', error); // Log full error
     throw new Error('Failed to upload file to S3');
   }
 };
@@ -58,7 +57,6 @@ const deleteFromS3 = async (url) => {
 
     await s3.send(command);
   } catch (error) {
-    console.error('Error deleting from S3:', error);
     throw new Error('Failed to delete file from S3');
   }
 };

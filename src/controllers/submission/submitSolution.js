@@ -73,7 +73,6 @@ const submitSolution = async (req, res) => {
     if (verdict === 'Accepted') problem.acceptedSubmissions += 1;
     problem.acceptanceRate = parseFloat((problem.acceptedSubmissions / problem.totalSubmissions * 100).toFixed(2));
     await problem.save();
-
     return res.status(200).json({
       message: 'Submission evaluated',
       submission: {

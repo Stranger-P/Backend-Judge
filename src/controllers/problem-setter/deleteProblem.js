@@ -37,7 +37,6 @@ const deleteProblem = async (req, res) => {
     res.json({ message: 'Problem and related submissions permanently deleted' });
 
   } catch (error) {
-    console.error('Error deleting problem:', error);
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
