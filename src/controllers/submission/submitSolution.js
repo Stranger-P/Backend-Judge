@@ -59,9 +59,8 @@ const submitSolution = async (req, res) => {
       language,
       sampleTestCases: testCases,
     }, { timeout: 20000 });
-
     const { verdict, failedTestCase } = compileRes.data;
-
+    
     // Update submission
     submission.status = verdict;
     submission.failedTestCase = failedTestCase || null;
