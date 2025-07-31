@@ -104,7 +104,7 @@ const googleCallback = async (req, res) => {
       maxAge: ONE_DAY,
       path: '/',
     });
-    res.redirect("http://localhost:5173/dashboard") // Redirect to frontend
+    res.redirect(`${process.env.CLIENT_SERVICE}/dashboard`) // Redirect to frontend
   } catch (error) {
     res.status(500).json({ message: 'Google auth failed', error: error.message });
   }

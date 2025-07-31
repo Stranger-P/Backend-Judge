@@ -17,7 +17,7 @@ require('./src/config/passport');
 const app = express();
 connectDB();
 app.use(cors({
-  origin: 'http://localhost:5173',  // Allow frontend origin
+  origin: `${process.env.CLIENT_SERVICE}`,  // Allow frontend origin
   credentials: true                 // Allow cookies from cross-origin
 }));
 app.use(cookieParser());             
